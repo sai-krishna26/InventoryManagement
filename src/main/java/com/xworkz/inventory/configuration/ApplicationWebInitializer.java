@@ -11,7 +11,7 @@ public class ApplicationWebInitializer extends AbstractAnnotationConfigDispatche
     @Override
     protected Class<?>[] getRootConfigClasses() {
         System.out.println("ApplicationWebInitializer getRootConfigClasses()");
-        return new Class[0];
+        return new Class[]{DataBaseConfiguration.class};
     }
 
     @Override
