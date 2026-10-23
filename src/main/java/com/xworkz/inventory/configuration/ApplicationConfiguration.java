@@ -3,6 +3,7 @@ package com.xworkz.inventory.configuration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -38,5 +39,11 @@ public void addResourceHandlers(ResourceHandlerRegistry registry) {
             .addResourceLocations("/images/");
     registry.addResourceHandler("/css/**")
             .addResourceLocations("/css/");
+}
+
+@Bean
+public BCryptPasswordEncoder passwordEncoder()
+{
+    return new BCryptPasswordEncoder();
 }
 }

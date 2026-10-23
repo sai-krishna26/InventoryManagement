@@ -22,6 +22,7 @@ public class DairyRepoImpl implements DairyRepo {
     public boolean save(DairyEntity dairyEntity) {
 
         System.out.println("save() in DairyRepoImpl");
+        System.out.println(dairyEntity);
         entityManager.persist(dairyEntity);
         return true;
     }
